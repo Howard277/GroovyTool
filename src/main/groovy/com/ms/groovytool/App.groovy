@@ -7,7 +7,7 @@ import com.ms.groovytool.tools.DBOperation
  */
 class App {
     static void main(def args) {
-        DBOperation.execData("delete from user where id = 1")
+//        DBOperation.execData("delete from user where id = 1")
         DBOperation.queryData("select * from user")
     }
 }
