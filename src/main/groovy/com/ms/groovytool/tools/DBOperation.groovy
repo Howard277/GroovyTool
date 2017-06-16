@@ -1,5 +1,6 @@
 package com.ms.groovytool.tools
 
+import com.alibaba.fastjson.JSON
 import groovy.sql.Sql
 
 /**
@@ -17,15 +18,17 @@ class DBOperation {
      * @return
      */
     def static queryData(sql) {
+        def list = new ArrayList<String>()
         try {
             //数据处理
-            sqlCon.eachRow(sql) { row -> println(row) }
+            sqlCon.eachRow(sql) { row -> list.add(row.name) }
         } catch (Exception ex) {
             println(ex)
         } finally {
             //关闭连接
 //            sqlCon.close()
         }
+        return list
     }
 
     /**
