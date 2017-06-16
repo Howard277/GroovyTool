@@ -1,13 +1,19 @@
 package com.ms.groovytool
 
 import com.ms.groovytool.tools.DBOperation
+import org.springframework.boot.SpringApplication
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import springfox.documentation.swagger2.annotations.EnableSwagger2
 
 /**
  * Created by wuketao on 2017/6/6.
  */
+@SpringBootApplication
+@EnableSwagger2
 class App {
     static void main(def args) {
 //        DBOperation.execData("delete from user where id = 1")
-        DBOperation.queryData("select * from user")
+        SpringApplication.run(App.class,args)
+//        DBOperation.queryData("select * from user")
     }
 }
